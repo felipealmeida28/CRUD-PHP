@@ -12,5 +12,8 @@
 */
 
 Route::get('/', 'CrudController@listar');
+Route::get('/criar', 'CrudController@criar');
+Route::post('/criar', 'CrudController@criarA');
 
+Route::get('/delet/{id}', 'CrudController@delet');
 

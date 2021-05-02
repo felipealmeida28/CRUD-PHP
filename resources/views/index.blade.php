@@ -13,7 +13,15 @@
 
 </head>
 <body>
-    <h1>Lista de dados</h1>
+    <h1>Lista de Usuario</h1>
+
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/criar">Adicionar Usuario</a>
+        </li>
+    </ul>
+
+
 
     <table class="table">
         <thead>
@@ -21,16 +29,28 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
+            <th scope="col">Criacao</th>
+            <th scope="col">acoes</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
+
             @foreach($dados as $item)
-            <th scope="row">{{$item->id}}</th>
-            <td>{{$item->id}}</td>
-            <td>{{$item->id}}</td>
+                <tr>
+                    <th scope="row">{{$item->id}}</th>
+                    <td>{{$item->nome}}</td>
+                    <td>{{$item->email}}</td>
+                    <td>{{$item->criacao}}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href = '#'">Editar</button>
+                        <button type="button" class="btn btn-danger"  onclick="window.location.href = 'delet/{{$item->id}}'">Deletar</button>
+
+
+                    </td>
+
+                </tr>
             @endforeach
-        </tr>
+
 
         </tbody>
     </table>

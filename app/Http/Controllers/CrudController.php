@@ -12,4 +12,20 @@ class CrudController extends Controller
         return view('index', compact('dados'));
 
         }
+
+        public function criar(){
+            return view('criar');
+        }
+
+        public function criarA(Request $request){
+            $dados = $request->only(['nome', 'email']);
+            DB::insert('INSERT INTO CRUD (nome,email)VALUES (?,?)',[$dados['nome'], $dados['email']]);
+            return redirect('/  ');
+
+        }
+
+        public function delet($id){
+            DB::delete('DELETE FROM CRUD WHERE id=?',[$id]);
+            return redirect('/');
+        }
 }
