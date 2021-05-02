@@ -13,7 +13,7 @@
 
 </head>
 <body>
-    <h1>Lista de Usuario</h1>
+<h1 class="text-center">Lista de Usuario</h1>
 
     <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -29,7 +29,6 @@
             <th scope="col">#</th>
             <th scope="col">Nome</th>
             <th scope="col">Email</th>
-            <th scope="col">Criacao</th>
             <th scope="col">acoes</th>
         </tr>
         </thead>
@@ -40,9 +39,8 @@
                     <th scope="row">{{$item->id}}</th>
                     <td>{{$item->nome}}</td>
                     <td>{{$item->email}}</td>
-                    <td>{{$item->criacao}}</td>
                     <td>
-                        <button type="button" class="btn btn-primary" onclick="window.location.href = '#'">Editar</button>
+                        <button type="button" class="btn btn-primary" onclick="window.location.href = 'editar/{{$item->id}}'">Editar</button>
                         <button type="button" class="btn btn-danger"  onclick="window.location.href = 'delet/{{$item->id}}'">Deletar</button>
 
 
